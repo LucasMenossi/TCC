@@ -33,5 +33,11 @@ df.sort_values(by="Nr Litros")
 
 #Mostra apenas as colunas que estão acima da média da coluna Nr Litros
 df[df["Nr Litros"] > df["Nr Litros"].mean()]
+#Mostra apenas as colunas que estão acima da média da coluna Nr Litros e a coluna Produto tem o valor GASOLINA
+df[(df["Nr Litros"] > df["Nr Litros"].mean()) & (df["Produto"] == "GASOLINA")]
+#Mostra a quantidade de vezes que cada atributo unico da coluna Produto aparece
+df["Produto"].value_counts()
+#Mostra a quantidade em porcentagem que cada atributo da coluna Produto aparece
+df["Produto"].value_counts(normalize=True)
 
 df
